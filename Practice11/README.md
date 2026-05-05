@@ -1,18 +1,53 @@
-## Getting Started
+# Документирование кода
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Практическая работа по теме документирования Java-кода.
 
-## Folder Structure
+В программе создан класс `CalculateOperations`, в котором реализованы простые арифметические операции:
 
-The workspace contains two folders by default, where:
+```text
+сложение
+вычитание
+деление
+```
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Класс и методы оформлены с помощью Javadoc-комментариев формата:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+```java
+/**
+ * Описание элемента программы.
+ */
+```
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+В комментариях используются дескрипторы:
 
-## Dependency Management
+```text
+@author
+@version
+@param
+@return
+@throws
+```
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+`javadoc` — это стандартная утилита Java, которая создаёт HTML-документацию на основе специальных комментариев `/** */` в исходном коде.
+
+То есть сначала мы пишем описание классов и методов в коде, а затем `javadoc` автоматически превращает эти описания в отдельные страницы документации.
+
+Также в коде используются обычные однострочные и блочные комментарии.
+
+Для генерации HTML-документации можно использовать команду:
+
+```powershell
+javadoc -encoding UTF-8 -docencoding UTF-8 -charset UTF-8 CalculateOperations.java
+```
+
+После выполнения команды появятся HTML-файлы документации. Главный файл для просмотра:
+
+```text
+index.html
+```
+
+Файл программы:
+
+```text
+CalculateOperations.java
+```
